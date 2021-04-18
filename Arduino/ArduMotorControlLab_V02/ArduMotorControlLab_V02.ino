@@ -30,14 +30,13 @@ void setup() {
   // intinitalize encoder
   InitArduMotorControl();
   pinMode(LED_BUILTIN, OUTPUT);
-
+  
   // init serial
   Serial.begin (115200);
-  
   //////////////////////////////
   //////// Student Code ////////
   //////////////////////////////
-
+  
   // serial plotter legend
   Serial.println("DesireCMD, MotorCMD, Error, RPMdt, MCUload");
   
