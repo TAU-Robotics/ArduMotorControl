@@ -9,7 +9,7 @@
 // define constants
 #define DT_CONTROL_MILLIS 10  // Control DT suggested range 5-50 mSec --> 200-20 Hz
 #define GEAR_RATIO 100.37     // Motor gear ratio
-#define TIMEOUT 10            // Experiment length in seconds
+#define TIMEOUT 5            // Experiment length in seconds
 
 // timeout flag
 boolean timeOutFlag = 0;
@@ -126,8 +126,6 @@ float MotorControl(float desiredCMD){
   // control coefficients
   float kp = 0.002;
   float ki = 0.05;
-  //float kp = 0.002/5;
-  //float ki = 0.05/4;
   float kd = 0.00005;
   
   // update error
@@ -143,12 +141,13 @@ float MotorControl(float desiredCMD){
 
   // update control command
   float motorCMD = kp*cEr + ki*ciEr + kd*cdEr;
-  
-  // optional implementations
-  // clip motor command
-  //if (motorCMD > 1) motorCMD = 1;
-  //if (motorCMD < -1) motorCMD = -1;
 
+  // Optional - As it is clipped in library.
+  // clip motor command
+  // if (motorCMD > 1) motorCMD = 1;
+  // if (motorCMD < -1) motorCMD = -1;
+  
+  // Optional
   // dead zone + preamp
   //if (abs(motorCMD) < 0.05) motorCMD = 0; // dead zone
   //if ((motorCMD >= 0.05) && (motorCMD < 0.075)) motorCMD = 0.075; // preamp
