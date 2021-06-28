@@ -6,9 +6,9 @@
 
 // encoder variables
 volatile int encoderCounts = 0;
-volatile unsigned long lastMicrosENCTick = 1000000;// initilize with inf value
-volatile unsigned long encoderDTmicros = 1000000; // initilize with inf value
-volatile unsigned long encoderDTmicrosFiltered = 1000000;
+volatile unsigned long lastMicrosENCTick = 0;              // initilize with inf value
+volatile unsigned long encoderDTmicros = 10000000;         // initilize with inf value
+volatile unsigned long encoderDTmicrosFiltered = 10000000; // initilize with inf value
 volatile int rotationDir = 1;
 
 

@@ -1,4 +1,4 @@
-/* ArduMoto Control 09/09/2020
+/* ArduMoto Control 28/06/2021
 
    Arduino Uno
    Sparkfun Ardumoto shield Dev-14129
@@ -8,7 +8,7 @@
 
 // define constants
 #define DT_CONTROL_MILLIS 10  // Control DT suggested range 5-50 mSec --> 200-20 Hz
-#define GEAR_RATIO 100.37     // Motor gear ratio
+#define GEAR_RATIO 29.86     // Motor gear ratio
 #define TIMEOUT 5            // Experiment length in seconds
 
 // timeout flag
@@ -93,7 +93,7 @@ void MotorControlLoop(void){
   // Command profile
   // float desiredCMD = 100 * StepCMD(2); // step command, input period seconds
   // float desiredCMD = 100 * RampCMD(2); // Ramp command, input period seconds
-  float desiredCMD = 100 * SineCMD(0.5);  // Sine command, input Hz
+  float desiredCMD = 300 * SineCMD(0.5);  // Sine command, input Hz
   
   // motor control function
   float motorCMD = MotorControl(desiredCMD);
@@ -124,9 +124,9 @@ float MotorControl(float desiredCMD){
   static float lEr  = 0; // last error
   
   // control coefficients
-  float kp = 0.002;
-  float ki = 0.05;
-  float kd = 0.00005;
+  float kp = 0.002/3;
+  float ki = 0.05/3;
+  float kd = 0.00005/3;
   
   // update error
   lEr = cEr;
