@@ -16,3 +16,6 @@ Arduino response:
 
 ![Arduino Response](https://github.com/TAU-Robotics/ArduMotorControl/blob/main/Photos/ArduinoControlPlot.png)
 ![Arduino Response](https://github.com/TAU-Robotics/ArduMotorControl/blob/main/Photos/PI_Controller2.JPG)
+
+# HomeKit Motor Control
+![TAU-ARD](https://github.com/TAU-Robotics/ArduMotorControl/blob/main/Photos/TAU-ARD%20Kit.jpg)
