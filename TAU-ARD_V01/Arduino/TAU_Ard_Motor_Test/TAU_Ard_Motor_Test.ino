@@ -27,7 +27,7 @@ float linearPotentiometer = 0;
 // define constants
 #define DT_CONTROL_MILLIS 10  // Control DT suggested range 5-50 mSec --> 200-20 Hz
 #define GEAR_RATIO 30.0     // Motor gear ratio
-#define TIMEOUT 10            // Experiment length in seconds
+#define TIMEOUT 30            // Experiment length in seconds
 
 // loop start time variable
 unsigned long startTime = 0;
@@ -164,8 +164,8 @@ void MotorControlLoop(void) {
   // Command profile
   // float desiredCMD = 500 * StepCMD(2); // step command, input period seconds
   // float desiredCMD = 100 * RampCMD(2); // Ramp command, input period seconds
-  //desiredCMD = 500 * SineCMD(0.5);  // Sine command, input Hz
-  desiredCMD = 300 * linearPotentiometer; // potentiometer value
+  //desiredCMD = 600 * (SineCMD(0.25)-0.5);  // Sine command, input Hz
+  desiredCMD = (300 * linearPotentiometer-150)*2; // potentiometer value
   
   // motor control function
   motorCMD = MotorControl(desiredCMD);

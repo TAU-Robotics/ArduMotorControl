@@ -48,7 +48,7 @@ void motorComand(float cntrlValue){
     analogWrite(PWM1_PIN,int(cntrlValue * 255));
   }else{
     analogWrite(PWM1_PIN,LOW);
-    analogWrite(PWM2_PIN,int(cntrlValue * 255));
+    analogWrite(PWM2_PIN,int(-cntrlValue * 255));
   }  
 }
 
@@ -61,7 +61,7 @@ void InitArduMotorControl(){
 
   pinMode(PWM1_PIN, OUTPUT); // Motor control PWM1
   pinMode(PWM2_PIN, OUTPUT); // Motor control PWM2
-
+  
   // init motor to off
   digitalWrite(PWM1_PIN, LOW);
   digitalWrite(PWM2_PIN, LOW);
