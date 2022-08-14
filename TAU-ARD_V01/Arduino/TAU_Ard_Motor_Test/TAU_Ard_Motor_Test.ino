@@ -60,10 +60,8 @@ void setup() {
   pinMode(RED_LED, OUTPUT); // Red LED
   pinMode(GREEN_LED, OUTPUT); // Green LED
   pinMode(BLUE_LED, OUTPUT); // Blue LED
-
   // init i2c
   Wire.begin();
-
   // initialize distance sensor
   if (distanceSensor.begin() != 0) //Begin returns 0 on a good init
   {
